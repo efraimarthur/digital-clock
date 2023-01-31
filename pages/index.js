@@ -76,15 +76,7 @@ export default function Home() {
       </Head>
 
       <main className="">
-        <div className="flex min-h-screen justify-center items-center  bg-slate-600 ">
-          <Image
-            src="/background.jpg"
-            width={500}
-            height={500}
-            alt="background"
-            quality={10}
-            className="fixed h-screen w-screen"
-          />
+        <div className="flex min-h-screen justify-center items-center bg-[url('/bgClock.jpg')] bg-slate-600 bg-contain">
           <div className="flex md:flex-row flex-col gap-5 md:gap-8 md:p-5 p-10 md:pb-20 rounded-3xl bg-slate-900 md:text-6xl text-2xl text-slate-100 z-10 shadow-2xl">
             <div className="relative z-50 before:absolute before:content-['Day'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2  before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text md:before:block before:hidden">
               {days}
