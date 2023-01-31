@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -75,23 +76,31 @@ export default function Home() {
       </Head>
 
       <main className="">
-        <div className="flex gap-10 min-h-screen justify-center items-center text-6xl font-bold text-slate-100 bg-slate-600">
-          <div className="flex md:flex-row flex-wrap gap-10 p-5 pb-20 rounded-3xl bg-slate-900">
-            <div className="relative z-50 before:absolute before:content-['Day'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2  before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text">
+        <div className="flex min-h-screen justify-center items-center  bg-slate-600 ">
+          <Image
+            src="/background.jpg"
+            width={500}
+            height={500}
+            alt="background"
+            quality={10}
+            className="fixed h-screen w-screen"
+          />
+          <div className="flex md:flex-row flex-col gap-5 md:gap-8 md:p-5 p-10 md:pb-20 rounded-3xl bg-slate-900 md:text-6xl text-2xl text-slate-100 z-10 shadow-2xl">
+            <div className="relative z-50 before:absolute before:content-['Day'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2  before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text md:before:block before:hidden">
               {days}
             </div>
-            <div className="relative z-50 before:absolute before:content-['Hours'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2 before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text">
+            <div className="relative z-50 before:absolute before:content-['Hours'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2 before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text md:before:block before:hidden">
               {hour}
             </div>
-            <span>:</span>
-            <div className="relative z-50 before:absolute before:content-['Minutes'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2 before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text">
+            <span className="hidden md:inline">:</span>
+            <div className="relative z-50 before:absolute before:content-['Minutes'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2 before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text md:before:block before:hidden">
               {minute}
             </div>
-            <span>:</span>
-            <div className="relative z-50 before:absolute before:content-['Seconds'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2 before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text">
+            <span className="hidden md:inline">:</span>
+            <div className="relative z-50 before:absolute before:content-['Seconds'] before:-bottom-10 before:text-xl before:left-1/2 before:-translate-x-1/2 before:bg-gradient-to-r before:from-fuchsia-600 before:to-emerald-600 before:text-transparent before:bg-clip-text md:before:block before:hidden">
               {second}
             </div>
-            <span>:</span>
+            <span className="hidden md:inline">:</span>
             <div className="">{AmPm}</div>
           </div>
         </div>
